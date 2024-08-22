@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Room in VR</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@latest/dist/aframe-physics-system.min.js"></script>
+</head>
+<body>
+  <a-scene physics="gravity: -9.8">
+    <!-- Suelo -->
+    <a-plane position="0 -0.5 -4" rotation="-90 0 0" width="8" height="8" src="images/gris.avif" static-body></a-plane>
+
+    <!-- Paredes -->
+	<!-- Pares izquierda -->
+    <a-box position="-4 1 -4" rotation="0 90 0" width="8" height="3" depth="0.1" src="images/muro-blanco.avif" static-body></a-box>
+			<!-- Cuadro izquierda 1 -->
+			<a-box position="-3.96 1 -6" rotation="0 90 0" width="2.5" height="2" depth="0.05" color="black" static-body></a-box>
+			<a-text value="Dos señoras le pregutnas a un borracho: 
+
+			-Señor,¿Donde queda el  museo de las momias? 
+
+			+¡Si no saben regresar para que sale!" align="center" position="-3.92 1 -6" rotation="0 90 0" width="2.5" color="white" side="double"></a-text>
+
+			<!-- Cuadro izquierda 2 -->
+			<a-box position="-3.96 1 -2" rotation="0 90 0" width="2.5" height="2" depth="0.05" color="grey" static-body></a-box>
+			<a-text value="¡Bienvenido!" align="center" position="-3.92 1 -2" rotation="0 90 0" width="2.5" color="white" side="double"></a-text>
+
+	<!-- Pares derecha -->
+    <a-box position="4 1 -4" rotation="0 90 0" width="8" height="3" depth="0.1" src="images/muro-blanco.avif" static-body></a-box>
+			<!-- Cuadro Derecha 1 -->
+			<a-box position="3.94 1 -6" rotation="0 90 0" width="2.5" height="2" depth="0.05" color="red" static-body></a-box>
+			<a-text value="¡Bienvenido!" align="center" position="3.90 1 -6" rotation="0 -90 0" width="2.5" color="white" side="double"></a-text>
+
+			<!-- Cuadro Derecha 2 -->
+			<a-box position="3.94 1 -2" rotation="0 90 0" width="2.5" height="2" depth="0.05" color="red" static-body></a-box>
+			<a-text value="¡Bienvenido!" align="center" position="3.90 1 -2" rotation="0 -90 0" width="2.5" color="white" side="double"></a-text>
+	
+	<!-- Pares puerta -->
+    <a-box position="0 1 -8" width="8" height="3" depth="0.1" src="images/muro-blanco.avif" static-body></a-box>
+
+		<!-- Cuadro Puerta 1 -->
+		<a-box position="-2.35 1 -7.95" width="2.5" height="2" depth="0.05" color="grey" static-body></a-box>
+		<a-text value="¡Bienvenido!" align="center" position="-2.35 1 -7.92" width="2.5" color="white" side="double"></a-text>
+	
+		<!-- Cuadro Puerta 2 -->
+		<a-box position="1.8 1 -7.95" width="1.5" height="2" depth="0.05" color="grey" static-body></a-box>
+		<a-text value="Hola!" align="center" position="1.8 1 -7.92" width="2.5" color="white" side="double"></a-text>
+    
+	<!-- Pared de fondo detras -->
+    <a-box position="0 1 0" rotation="0 0 0" width="8" height="3" depth="0.1" src="images/muro-blanco.avif" static-body></a-box>
+				<!-- Cuadro atras 1 -->
+				<a-box position="2.35 1 -0.04" rotation="0 0 0" width="2.5" height="2" depth="0.05" color="green" static-body></a-box>
+				<a-text value="¡Bienvenido!" align="center" position="2.35 1 -0.1" rotation="0 180 0" width="2.5" color="red" side="double"></a-text>
+
+				<!-- Cuadro atras 2 -->
+				<a-box position="-1.8 1 -0.04" rotation="0 0 0" width="2.5" height="2" depth="0.05" color="green" static-body></a-box>
+				<a-text value="¡Bienvenido!" align="center" position="-1.8 1 -0.1" rotation="0 180 0" width="2.5" color="red" side="double"></a-text>
+    
+    <!-- Techo -->
+    <a-box position="0 2.56 -4" rotation="90 0 0" width="8" height="8" depth="0.1" src="images/blanco-intenso.avif" static-body></a-box>
+
+    <!-- Puerta -->
+    <a-box position="0 0.8 -7.9" width="1.5" height="2.5" depth="0.05" src="./images/puerta-1.png" static-body></a-box>
+
+
+    
+
+    <!-- Librero -->
+    <a-box position="3 1 -7.95" width="0.5" height="2.5" depth="0.5" src="src/estante.png" static-body></a-box>
+    <a-box position="3 2.4 -7.95" width="0.5" height="0.1" depth="0.5" color="red" static-body></a-box>
+    <a-box position="3 1.7 -7.95" width="0.5" height="0.1" depth="0.5" color="" static-body></a-box>
+
+    <!-- Cajas -->
+    <!-- <a-box position="1 0.5 -3" width="0.5" height="0.5" depth="0.5" src="src/sofa.png" static-body></a-box>
+    <a-box position="1 0.5 -4" width="0.5" height="0.5" depth="0.5" color="#8B4513" static-body></a-box> -->
+
+    <!-- Cámara y controles -->
+    <a-entity id="camera" camera wasd-controls="enabled: true">
+      <a-entity camera look-controls="pointerLockEnabled: true" position="0 1 0"></a-entity>
+    </a-entity>
+  </a-scene>
+
+  <!-- Scripts adicionales para ajustes de físicas -->
+  <script>
+    AFRAME.registerComponent('camera-collision', {
+      init: function () {
+        this.el.addEventListener('collision', function (e) {
+          // Evita que la cámara atraviese paredes
+          if (e.detail.body.el && e.detail.body.el.getAttribute('static-body')) {
+            // Lógica para manejar las colisiones
+            console.log('Colisión detectada con:', e.detail.body.el);
+          }
+        });
+      }
+    });
+
+    document.querySelector('#camera').setAttribute('camera-collision', '');
+  </script>
+</body>
+</html>
